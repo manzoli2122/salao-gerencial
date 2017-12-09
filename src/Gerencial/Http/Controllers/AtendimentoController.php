@@ -4,9 +4,9 @@ namespace Manzoli2122\Salao\Gerencial\Http\Controllers;
 
 
 use Manzoli2122\Salao\Atendimento\Models\Atendimento;
-use Manzoli2122\Salao\Atendiment\Models\Pagamento;
-use Manzoli2122\Salao\Atendiment\Models\AtendimentoFuncionario;
-use Manzoli2122\Salao\Atendiment\Models\ProdutosVendidos;
+use Manzoli2122\Salao\Atendimento\Models\Pagamento;
+use Manzoli2122\Salao\Atendimento\Models\AtendimentoFuncionario;
+use Manzoli2122\Salao\Atendimento\Models\ProdutosVendidos;
 use Illuminate\Http\Request;
 use Log;
 
