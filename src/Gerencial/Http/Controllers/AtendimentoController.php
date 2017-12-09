@@ -9,9 +9,10 @@ use Manzoli2122\Salao\Atendimento\Models\AtendimentoFuncionario;
 use Manzoli2122\Salao\Atendimento\Models\ProdutosVendidos;
 use Illuminate\Http\Request;
 use Log;
-
 use Monolog\Logger;
 use Monolog\Handler\StreamHandler;
+use Manzoli2122\Salao\Cadastro\Http\Controllers\Padroes\SoftDeleteController ;
+
 
 //use Barryvdh\DomPDF\Facade as PDF;
 

@@ -7,8 +7,8 @@ use Manzoli2122\Salao\Atendimento\Models\Atendimento;
 use Manzoli2122\Salao\Atendimento\Models\Pagamento;
 use Manzoli2122\Salao\Atendimento\Models\AtendimentoFuncionario;
 use Manzoli2122\Salao\Atendimento\Models\ProdutosVendidos;
-
 use Manzoli2122\Salao\Despesas\Models\Despesa;
+use Manzoli2122\Salao\Cadastro\Http\Controllers\Padroes\Controller ;
 
 
 
