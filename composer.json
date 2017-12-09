@@ -1,0 +1,32 @@
+{
+    "name": "manzoli2122/salao-gerencial",
+    "description": "Pacote Laravel",
+    "keywords": ["laravel"],
+    "license": "MIT",
+    "authors": [
+        { 
+            "name": "Bruno Manzoli do Nascimento",
+            "email": "manzoli2122@gmail.com"
+        }
+    ],
+    "require": {
+        "php": ">=7.0.0"//,
+       // "manzoli2122/salao-atendimento": "0.0.9"
+    },
+    
+    "autoload": {
+        
+        "psr-4": {
+            "Manzoli2122\\Salao\\Gerencial\\": "src/Gerencial/"
+        }
+    },
+    "extra":{
+        "laravel":{
+            "providers":[
+                "Manzoli2122\\Salao\\Gerencial\\GerencialServiceProvider"
+            ]
+            
+        }
+    }
+   
+}
