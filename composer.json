@@ -10,8 +10,8 @@
         }
     ],
     "require": {
-        "php": ">=7.0.0"//,
-       // "manzoli2122/salao-atendimento": "0.0.9"
+        "php": ">=7.0.0",
+        "manzoli2122/salao-despesas": "0.0.9"
     },
     
     "autoload": {
