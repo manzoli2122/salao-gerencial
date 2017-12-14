@@ -1,13 +1,13 @@
 
-@extends( Config::get('gerencial.templateMaster' , 'templates.templateMaster')  )
+@extends( Config::get('app.templateMaster' , 'templates.templateMaster')  )
 
 
 
-@section( Config::get('gerencial.templateMasterContentTitulo' , 'titulo-page')  )
+@section( Config::get('app.templateMasterContentTitulo' , 'titulo-page')  )
 			Listagem dos Atendimentos  @if($apagados) Apagados @endif
 		@endsection
 
-@section( Config::get('gerencial.templateMasterMenuLateral' , 'menuLateral')  )
+@section( Config::get('app.templateMasterMenuLateral' , 'menuLateral')  )
 			@if($apagados)
 				@permissao('gerencialAtendimentos')
 					<li><a href="{{ route('gerencialAtendimentos.index')}}"><i class="fa fa-circle-o text-blue"></i> <span>Atendimentos Ativos</span></a></li>
@@ -22,7 +22,7 @@
 
 
 		
-@section( Config::get('gerencial.templateMasterScript' , 'script')  )
+@push( Config::get('app.templateMasterScript' , 'script')  )
         	<script>$(function(){setTimeout("$('.hide-msg').fadeOut();",5000)});</script>
         @endsection
 
@@ -38,9 +38,9 @@
 						font-size:12px;
 					}
 			</style>
-		@endsection
+		@endpush
 
-@section( Config::get('gerencial.templateMasterContent' , 'contentMaster')  )
+@section( Config::get('app.templateMasterContent' , 'contentMaster')  )
 	
 			<section class="row Listagens">
 				<div class="col-12 col-sm-12 lista">		
