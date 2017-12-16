@@ -1,16 +1,13 @@
 @extends( Config::get('app.templateMaster' , 'templates.templateMaster')  )
     
-
 @section( Config::get('app.templateMasterContentTitulo' , 'titulo-page')  )
 		Cliente : <b> {{ $model->cliente->name}}
-	@endsection
-
-
+@endsection
 
 @section( Config::get('app.templateMasterContent' , 'contentMaster')  )
     
     
-    <section class="row text-center atendimentos"> 
+    <section class="text-center atendimentos"> 
 
         <div class="col-12 col-sm-4 servicos" style="margin-bottom:10px;">
            <h3>Serviços</h3>
@@ -19,8 +16,7 @@
                     <div class="col-md-12">
                         <div class="box box-success">
                             <div class="box-header with-border">
-                                <h3 class="box-title">{{$servico->servico->nome}}</h3>
-                                                          
+                                <h3 class="box-title">{{$servico->servico->nome}}</h3>                                                          
                             </div>                        
                             <div class="box-body">                               
                                     <div class="direct-chat-msg">
@@ -34,14 +30,9 @@
                         </div>
                     </div>                    
                 </div>
-
-			@empty
-			
-			@endforelse  
-           
+			@empty			
+			@endforelse             
         </div>
-        
-
         
         <div class="col-12 col-sm-4 produtos" style="margin-bottom:0px;">
             <h3>Produtos</h3>
@@ -115,19 +106,5 @@
              <h3 style="text-align:right;">Total R$ {{number_format($model->valor, 2 ,',', '') }} </h3>
         </div>      
 
-
-
-
-       
     </section>
-
-
-
-        <br>
-        <a class="btn btn-warning btn-sm" href="{{ URL::previous()}}">Voltar</a>
-
-
-
-
-
 @endsection
