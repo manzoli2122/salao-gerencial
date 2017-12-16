@@ -89,4 +89,19 @@ class Atendimento extends Model
 
 
     
+    public function getDatatable()
+    {
+        return $this->select(['id', 'cliente_id',  DB::raw( " created_at as created_at " ) ,   DB::raw("concat( 'R$' , round( valor, 2 )) as valor")   ]);        
+    }
+    
+    public function getDatatableApagados()
+    {
+        return $this->onlyTrashed()->select(['id', 'cliente_id',   DB::raw( " created_at as created_at " ) , DB::raw("concat( 'R$' , round( valor, 2 )) as valor") ]);        
+    }
+   
+
+
+
+
+
 }

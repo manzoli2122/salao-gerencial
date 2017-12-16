@@ -14,21 +14,19 @@ use Monolog\Handler\StreamHandler;
 use Manzoli2122\Salao\Cadastro\Http\Controllers\Padroes\SoftDeleteController ;
 
 
-//use Barryvdh\DomPDF\Facade as PDF;
 
 class AtendimentoController extends SoftDeleteController
 {
 
     
 
-    protected $model;
-    
+    protected $model;    
     protected $pagamento;
-    protected $atendimentoFuncionario;
-   
+    protected $atendimentoFuncionario;   
     protected $produtosVendidos;
     protected $name = "Atendimento";
     protected $view = "gerencial::atendimentos";
+    protected $view_apagados = "gerencial::atendimentos.apagados";
     protected $route = "gerencialAtendimentos";
 
     protected $log;
@@ -47,17 +45,9 @@ class AtendimentoController extends SoftDeleteController
 
 
         $this->middleware('permissao:atendimentosGerencial')->only([ 'index' , 'show' , 'pesquisar' ]) ;
-        
-        //$this->middleware('can:atendimentos-cadastrar')->only([ 'create' , 'store']);
-
-        //$this->middleware('can:atendimentos-editar')->only([ 'edit' , 'update']);
-
         $this->middleware('permissao:atendimentosGerencial-soft-delete')->only([ 'destroySoft' ]);
-
-        $this->middleware('permissao:atendimentosGerencial-restore')->only([ 'restore' ]);
-        
+        $this->middleware('permissao:atendimentosGerencial-restore')->only([ 'restore' ]);        
         $this->middleware('permissao:atendimentosGerencial-admin-permanete-delete')->only([ 'destroy' ]);
-
         $this->middleware('permissao:atendimentosGerencial-apagados')->only([ 'indexApagados' , 'showApagado' , 'pesquisarApagados']) ;
                                
 
