@@ -20,18 +20,7 @@
 <div class="col-xs-12">
     <div class="box box-success">
 
-			<div class="box-header align-right">			
-				{!! Form::open(['route' => 'gerencialAtendimentos.pesquisarPorData' ]) !!}
-								<div class="input-group input-group-sm" style="width: 250px; margin-left:auto;">
-									{!! Form::date('key' , null , ['class' => 'form-control' , 'placeholder' => 'Pesquisar', 'required']) !!}
-									<div class="input-group-btn">
-										<button style="margin-right:10px;" class="btn btn-outline-success my-2 my-sm-0 " type="submit" >
-											<i class="fa fa-search" aria-hidden="true"></i>
-										</button>	
-									</div>
-								</div>									
-							{!!  Form::close()  !!}		           
-        	</div>
+			
 		
 		
         <div class="box-body">
@@ -39,7 +28,6 @@
                 <thead>
                     <tr>
 						<th pesquisavel style="max-width:30px">ID</th>
-						<th pesquisavel style="max-width:100px">Cliente</th>
 						
 						<th pesquisavel style="max-width:120px">Data</th>
 						<th>Valor</th>		
@@ -67,7 +55,6 @@
 				},
 				columns: [
 					{ data: 'id', name: 'id' },
-					{ data: 'cliente_id', name: 'cliente_id' },
 					
 					{ data: 'created_at', name: 'created_at' },
 					{ data: 'valor', name: 'valor' },

@@ -4,6 +4,7 @@ namespace Manzoli2122\Salaos\Gerencial\Models;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
+use DB; 
 
 class Atendimento extends Model
 {
@@ -91,7 +92,7 @@ class Atendimento extends Model
     
     public function getDatatable()
     {
-        return $this->select(['id', 'cliente_id',  DB::raw( " created_at as created_at " ) ,   DB::raw("concat( 'R$' , round( valor, 2 )) as valor")   ]);        
+        return $this->select(['id',  DB::raw( " created_at as created_at " ) ,   DB::raw("concat( 'R$' , round( valor, 2 )) as valor")   ]);        
     }
     
     public function getDatatableApagados()
