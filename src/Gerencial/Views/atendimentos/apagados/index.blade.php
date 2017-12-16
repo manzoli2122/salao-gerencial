@@ -36,7 +36,7 @@
                 <thead>
                     <tr>
 						<th pesquisavel style="max-width:30px">ID</th>
-						<th pesquisavel style="max-width:100px">Cliente</th>
+						<th pesquisavel >Cliente</th>
 						
 						<th pesquisavel style="max-width:120px">Data</th>
 						<th>Valor</th>		
@@ -58,13 +58,13 @@
 	<script>
 		$(document).ready(function() {
 			var dataTable = datatablePadrao('#datatable', {
-				order: [[ 0, "asc" ]],
+				order: [[ 2, "desc" ]],
 				ajax: { 
 					url:'{{ route('gerencialAtendimentos.getDatatable.apagados') }}'
 				},
 				columns: [
 					{ data: 'id', name: 'id' },
-					{ data: 'cliente_id', name: 'cliente_id' },
+					{ data: 'cliente', name: 'cliente' },
 					
 					{ data: 'created_at', name: 'created_at' },
 					{ data: 'valor', name: 'valor' },
