@@ -28,7 +28,7 @@
                 <thead>
                     <tr>
 						<th pesquisavel style="max-width:30px">ID</th>
-						
+						<th pesquisavel >CLIENTE</th>
 						<th pesquisavel style="max-width:120px">Data</th>
 						<th>Valor</th>		
 						
@@ -55,7 +55,7 @@
 				},
 				columns: [
 					{ data: 'id', name: 'id' },
-					
+					{ data: 'cliente', name: 'cliente' },
 					{ data: 'created_at', name: 'created_at' },
 					{ data: 'valor', name: 'valor' },
 				
