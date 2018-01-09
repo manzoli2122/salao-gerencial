@@ -47,8 +47,8 @@
     var label_diario_pagamento_dinheiro = [], dados_diario_pagamento_dinheiro = [] 
     var ip = 0;
   @for ($i = 30; $i > 0; $i-- )
-    label_diario_pagamento_dinheiro.push(["{{$data->subDays($i)->format('d/m')}} " ])    
-    dados_diario_pagamento_dinheiro.push([ {{ Manzoli2122\Salao\Atendimento\Models\Pagamento::whereDate('created_at', [  $data->subDays($i)  ])->where('formaPagamento', 'dinheiro')->sum('valor') }}   ])
+    label_diario_pagamento_dinheiro.push(["{{$data->addDays(1)->format('d/m')}} " ])    
+    dados_diario_pagamento_dinheiro.push([ {{ Manzoli2122\Salao\Atendimento\Models\Pagamento::whereDate('created_at', $data->format('Y-m-d') )->where('formaPagamento', 'dinheiro')->sum('valor') }}   ])
     ip = ip + 1;
   @endfor
   
