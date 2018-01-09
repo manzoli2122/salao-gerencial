@@ -10,7 +10,7 @@ use Manzoli2122\Salao\Atendimento\Models\ProdutosVendidos;
 use Manzoli2122\Salao\Despesas\Models\Despesa;
 use Manzoli2122\Salao\Cadastro\Http\Controllers\Padroes\Controller ;
 
-
+use Carbon\Carbon;
 
 class GerencialController extends Controller
 {
@@ -33,7 +33,7 @@ class GerencialController extends Controller
     public function index()
     {
 
-        return view( "gerencial::relatorio.home" );
+        return view( "gerencial::relatorio.index" );
     }
         
 
