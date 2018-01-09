@@ -8,11 +8,10 @@ use Illuminate\Support\Facades\Route;
     
         Route::get('relatorio/geral', 'GerencialController@home')->name('gerencial.relatorio.geral');
         
-        
-
 
         Route::get('relatorio', 'GerencialController@index')->name('gerencial.relatorio.index');
-
+        
+        Route::post('relatorio/pagamentos', 'GerencialController@pagamentos')->name('relatorio-pagamentos-chart');
 
 
         Route::post('atendimentos/pesquisarPorData', 'AtendimentoController@pesquisarPorData')->name('gerencialAtendimentos.pesquisarPorData');

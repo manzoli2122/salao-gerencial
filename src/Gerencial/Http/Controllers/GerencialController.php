@@ -38,6 +38,24 @@ class GerencialController extends Controller
         
 
 
+
+
+    public function pagamentos(Request $request)
+    {      
+        $dataForm = $request->except('_token');        
+        $dataString = $dataForm['data'] ;  
+        $data = Carbon::createFromFormat('Y-m-d', $dataString);
+        
+        $dia = 30;      
+        //$dia = $dataForm['dia'] ;        
+        //$models = $this->model->whereDate('created_at', $dataForm['key'])->get();        
+        //$data['models'] = $models;
+        return view('gerencial::relatorio.graficos.pagamentos.pagamentos' , compact('data', 'dia'));
+    }
+
+
+
+
     public function home()
     {
 
