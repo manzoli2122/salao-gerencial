@@ -18,6 +18,10 @@
             <form method="post" action="{{route('relatorio-pagamentos-chart')}}" class="form-inline">
 				{{csrf_field()}}
 				<div class="form-group mx-sm-3 mb-2">
+						<label> Pagamentos </label>
+						
+				</div>
+				<div class="form-group mx-sm-3 mb-2">
 						<label for="dia" class="sr-only">Dias</label>
 						<input name="dia" type="number" class="form-control" id="dia" placeholder="Dia" required>
 				</div>

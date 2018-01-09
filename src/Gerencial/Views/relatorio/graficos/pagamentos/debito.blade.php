@@ -45,11 +45,11 @@
 
     var label_diario_pagamento_debito = [], dados_diario_pagamento_debito = [] 
     var ip = 0;
-  @for ($i = 30; $i > 0; $i-- )
-    label_diario_pagamento_debito.push(["{{today()->subDays($i)->format('d/m')}} " ])    
-    dados_diario_pagamento_debito.push([ {{ Manzoli2122\Salao\Atendimento\Models\Pagamento::whereDate('created_at', [  today()->subDays($i)  ])->where('formaPagamento', 'debito')->sum('valor') }}   ])
-    ip = ip + 1;
-  @endfor
+    @for ($i = $dia; $i > 0; $i-- )
+      label_diario_pagamento_dinheiro.push(["{{$data->addDays(1)->format('d/m')}} " ])        
+      dados_diario_pagamento_debito.push([ {{ Manzoli2122\Salao\Atendimento\Models\Pagamento::whereDate('created_at', $data->format('Y-m-d') )->where('formaPagamento', 'debito')->sum('valor') }}   ])
+    
+    @endfor
   
   var area_diario_pagamento_debito = {    
      

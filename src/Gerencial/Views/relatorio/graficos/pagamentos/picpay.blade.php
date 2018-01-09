@@ -45,10 +45,10 @@
 
     var label_diario_pagamento_picpay = [], dados_diario_pagamento_picpay = [] 
     var ip = 0;
-  @for ($i = 30; $i > 0; $i-- )
-    label_diario_pagamento_picpay.push(["{{today()->subDays($i)->format('d/m')}} " ])    
-    dados_diario_pagamento_picpay.push([ {{ Manzoli2122\Salao\Atendimento\Models\Pagamento::whereDate('created_at', [  today()->subDays($i)  ])->where('formaPagamento', 'Pic Pay' )->sum('valor') }}   ])
-    ip = ip + 1;
+    @for ($i = $dia; $i > 0; $i-- )
+    label_diario_pagamento_dinheiro.push(["{{$data->addDays(1)->format('d/m')}} " ])   
+    dados_diario_pagamento_picpay.push([ {{ Manzoli2122\Salao\Atendimento\Models\Pagamento::whereDate('created_at', $data->format('Y-m-d') )->where('formaPagamento', 'Pic Pay' )->sum('valor') }}   ])
+   
   @endfor
   
   var area_diario_pagamento_picpay = {    
