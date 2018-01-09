@@ -46,7 +46,7 @@
     var label_diario_pagamento_transferencia = [], dados_diario_pagamento_transferencia = [] 
     var ip = 0;
     @for ($i = $dia; $i > 0; $i-- )
-    label_diario_pagamento_dinheiro.push(["{{$data->addDays(1)->format('d/m')}} " ])    
+    label_diario_pagamento_transferencia.push(["{{$data->addDays(1)->format('d/m')}} " ])    
     dados_diario_pagamento_transferencia.push([ {{ Manzoli2122\Salao\Atendimento\Models\Pagamento::whereDate('created_at',$data->format('Y-m-d') )->where('formaPagamento', 'Transferência Bancária')->sum('valor') }}   ])
    
   @endfor

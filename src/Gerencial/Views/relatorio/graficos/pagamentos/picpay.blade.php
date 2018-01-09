@@ -46,7 +46,7 @@
     var label_diario_pagamento_picpay = [], dados_diario_pagamento_picpay = [] 
     var ip = 0;
     @for ($i = $dia; $i > 0; $i-- )
-    label_diario_pagamento_dinheiro.push(["{{$data->addDays(1)->format('d/m')}} " ])   
+    label_diario_pagamento_picpay.push(["{{$data->addDays(1)->format('d/m')}} " ])   
     dados_diario_pagamento_picpay.push([ {{ Manzoli2122\Salao\Atendimento\Models\Pagamento::whereDate('created_at', $data->format('Y-m-d') )->where('formaPagamento', 'Pic Pay' )->sum('valor') }}   ])
    
   @endfor

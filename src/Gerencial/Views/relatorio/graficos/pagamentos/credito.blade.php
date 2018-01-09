@@ -46,7 +46,7 @@
     var label_diario_pagamento_credito = [], dados_diario_pagamento_credito = [] 
     var ip = 0;
     @for ($i = $dia; $i > 0; $i-- )
-    label_diario_pagamento_dinheiro.push(["{{$data->addDays(1)->format('d/m')}} " ])    
+    label_diario_pagamento_credito.push(["{{$data->addDays(1)->format('d/m')}} " ])    
     dados_diario_pagamento_credito.push([ {{ Manzoli2122\Salao\Atendimento\Models\Pagamento::whereDate('created_at', $data->format('Y-m-d') )->where('formaPagamento', 'credito')->sum('valor') }}   ])
     ip = ip + 1;
   @endfor

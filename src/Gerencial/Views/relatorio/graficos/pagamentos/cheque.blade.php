@@ -46,7 +46,7 @@
     var label_diario_pagamento_cheque = [], dados_diario_pagamento_cheque = [] 
     var ip = 0;
     @for ($i = $dia; $i > 0; $i-- )
-    label_diario_pagamento_dinheiro.push(["{{$data->addDays(1)->format('d/m')}} " ])  
+    label_diario_pagamento_cheque.push(["{{$data->addDays(1)->format('d/m')}} " ])  
     dados_diario_pagamento_cheque.push([ {{ Manzoli2122\Salao\Atendimento\Models\Pagamento::whereDate('created_at', $data->format('Y-m-d'))->where('formaPagamento', 'cheque')->sum('valor') }}   ])
     ip = ip + 1;
   @endfor
