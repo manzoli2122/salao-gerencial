@@ -46,8 +46,8 @@ class GerencialController extends Controller
         $dataString = $dataForm['data'] ;  
         $data = Carbon::createFromFormat('Y-m-d', $dataString);
         
-        $dia = 30;      
-        //$dia = $dataForm['dia'] ;        
+        //$dia = 30;      
+        $dia = $dataForm['dia'] ;        
         //$models = $this->model->whereDate('created_at', $dataForm['key'])->get();        
         //$data['models'] = $models;
         return view('gerencial::relatorio.graficos.pagamentos.pagamentos' , compact('data', 'dia'));
