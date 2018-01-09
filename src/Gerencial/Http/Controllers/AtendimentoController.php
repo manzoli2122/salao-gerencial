@@ -8,9 +8,7 @@ use Manzoli2122\Salao\Atendimento\Models\Pagamento;
 use Manzoli2122\Salao\Atendimento\Models\AtendimentoFuncionario;
 use Manzoli2122\Salao\Atendimento\Models\ProdutosVendidos;
 use Illuminate\Http\Request;
-use Log;
-use Monolog\Logger;
-use Monolog\Handler\StreamHandler;
+use ChannelLog as Log;
 use Manzoli2122\Salao\Cadastro\Http\Controllers\Padroes\SoftDeleteController ;
 
 use DataTables;
@@ -19,9 +17,7 @@ use App\Constants\ErrosSQL;
 
 class AtendimentoController extends SoftDeleteController
 {
-
-    
-
+  
     protected $model;    
     protected $pagamento;
     protected $atendimentoFuncionario;   
@@ -30,7 +26,6 @@ class AtendimentoController extends SoftDeleteController
     protected $view = "gerencial::atendimentos";
     protected $view_apagados = "gerencial::atendimentos.apagados";
     protected $route = "gerencialAtendimentos";
-
     protected $log;
 
     public function __construct(Pagamento $pagamento , Atendimento $atendimento  ,
@@ -54,9 +49,10 @@ class AtendimentoController extends SoftDeleteController
                                
 
         // create a log channel
-        $this->log = new Logger('atendimento');
-        $this->log->pushHandler(new StreamHandler( storage_path('logs/Atendimento.log') , Logger::WARNING));
+        //$this->log = new Logger('atendimento');
+        //$this->log->pushHandler(new StreamHandler( storage_path('logs/Atendimento.log') , Logger::WARNING));
 
+        $this->logCannel = 'despesas';
 
 
     }
@@ -80,6 +76,8 @@ class AtendimentoController extends SoftDeleteController
 
         $restore = $model->restore();
         if($restore){
+            $msg =  "RESTOREs- " . $this->name . ' restaurado(a) com sucesso !! ' . $restore . ' responsavel: ' . session('users') ;
+            Log::write( $this->logCannel , $msg  );
             return redirect()->route("{$this->route}.index");
         }
         else{
@@ -109,6 +107,8 @@ class AtendimentoController extends SoftDeleteController
 
         $delete = $model->delete();
         if($delete){
+            $msg2 =  "DELETEs - " . $this->name . ' apagado(a) com sucesso !! ' . $model . ' responsavel: ' . session('users') ;
+            Log::write( $this->logCannel , $msg2  );  
             return redirect()->route("{$this->route}.index");
         }
         else{
