@@ -45,11 +45,11 @@
 
   	var label_diario_pagamento_total = [], dados_diario_pagamento_total = [] 
   	var ip = 0;
-    @for ($i = 0 ; $i > $dia ; $i++ )
+    @for ($i = 0 ; $i < $dia ; $i++ )
     label_diario_pagamento_total.push(["{{$data->addDays($i)->format('d/m')}} " ])    
 		dados_diario_pagamento_total.push([ {{ Manzoli2122\Salao\Atendimento\Models\Pagamento::whereDate('created_at',$data->format('Y-m-d') )->sum('valor') }}   ])
-    {{$data->subDays($i)}} 
-	@endfor
+    <?php $data->subDays($i); ?> 
+	@endfor 
 	
 	var area_diario_pagamento_total = {    
      
