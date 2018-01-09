@@ -33,11 +33,25 @@ class GerencialController extends Controller
     public function index()
     {
 
+        return view( "gerencial::relatorio.home" );
+    }
+        
+
+
+    public function home()
+    {
+
         $pagamentos = $this->pagamento->where('formaPagamento','<>', 'fiado')->sum('valor');
         $pagamentosFiados = $this->pagamento->where('formaPagamento', 'fiado')->sum('valor');
         $despesas = $this->despesa->sum('valor');
 
         return view("gerencial::relatorio.teste",compact('pagamentos', 'despesas','pagamentosFiados'));
     }
-        
+
+
+
+
+
+
+
 }

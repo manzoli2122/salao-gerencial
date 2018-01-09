@@ -6,9 +6,14 @@ use Illuminate\Support\Facades\Route;
 
     Route::group(['prefix' => 'gerencial', 'middleware' => 'auth' ], function(){
     
-        Route::get('relatorio/geral', 'GerencialController@index')->name('gerencial.relatorio.geral');
+        Route::get('relatorio/geral', 'GerencialController@home')->name('gerencial.relatorio.geral');
         
         
+
+
+        Route::get('relatorio', 'GerencialController@index')->name('gerencial.relatorio.index');
+
+
 
         Route::post('atendimentos/pesquisarPorData', 'AtendimentoController@pesquisarPorData')->name('gerencialAtendimentos.pesquisarPorData');
         
