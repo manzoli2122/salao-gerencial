@@ -23,13 +23,13 @@
       //Number - Radius of each point dot in pixels
       pointDotRadius          : 4,
       //Number - Pixel width of point dot stroke
-      pointDotStrokeWidth     : 1,
+      pointDotStrokeWidth     : 2,
       //Number - amount extra to add to the radius to cater for hit detection outside the drawn point
       pointHitDetectionRadius : 20,
       //Boolean - Whether to show a stroke for datasets
       datasetStroke           : true,
       //Number - Pixel width of dataset stroke
-      datasetStrokeWidth      : 2,
+      datasetStrokeWidth      : 5,
       //Boolean - Whether to fill the dataset with a color
       datasetFill             : true,
       //String - A legend template
@@ -59,7 +59,7 @@
         {
           label               : 'Electronics',
           fillColor           : 'rgba(210, 214, 222, 1)',
-          strokeColor         : 'rgba(210, 214, 222, 1)',
+          strokeColor         : 'rgba(255, 100, 110, 1)',
           pointColor          : 'rgba(210, 214, 222, 1)',
           pointStrokeColor    : '#c1c7d1',
           pointHighlightFill  : '#fff',
