@@ -52,7 +52,7 @@ class AtendimentoController extends SoftDeleteController
         //$this->log = new Logger('atendimento');
         //$this->log->pushHandler(new StreamHandler( storage_path('logs/Atendimento.log') , Logger::WARNING));
 
-        $this->logCannel = 'despesas';
+        $this->logCannel = 'gerencial';
 
 
     }
