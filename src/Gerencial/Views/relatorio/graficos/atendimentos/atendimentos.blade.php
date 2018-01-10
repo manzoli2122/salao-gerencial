@@ -196,11 +196,10 @@ Bem Vindo ao Sistema do Salão Espaço Vip
 
 
   	var label_diario_atendimento = [], dados_diario_atendimento = [] 
-  	var ip = 0;
-	 @for ($i = 30; $i > 0; $i-- )
-		label_diario_atendimento.push(["{{today()->subDays($i)->format('d/m')}} " ])    
-		dados_diario_atendimento.push([ {{ Manzoli2122\Salao\Atendimento\Models\Atendimento::whereDate('created_at', [  today()->subDays($i)  ])->sum('valor') }}   ])
-		ip = ip + 1;
+  	@for ($i = 0 ; $i < $dia ; $i++ )
+		label_diario_atendimento.push(["{{$data->addDays($i)->format('d/m')}} " ])    
+		dados_diario_atendimento.push([ {{ Manzoli2122\Salao\Atendimento\Models\Atendimento::whereDate('created_at',  $data->format('Y-m-d') )->sum('valor') }}   ])
+		<?php $data->subDays($i); ?>
 	@endfor
 	
 

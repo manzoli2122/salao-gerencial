@@ -27,13 +27,13 @@
       //Number - Radius of each point dot in pixels
       pointDotRadius          : 4,
       //Number - Pixel width of point dot stroke
-      pointDotStrokeWidth     : 1,
+      pointDotStrokeWidth     : 2,
       //Number - amount extra to add to the radius to cater for hit detection outside the drawn point
       pointHitDetectionRadius : 20,
       //Boolean - Whether to show a stroke for datasets
       datasetStroke           : true,
       //Number - Pixel width of dataset stroke
-      datasetStrokeWidth      : 2,
+      datasetStrokeWidth      : 5,
       //Boolean - Whether to fill the dataset with a color
       datasetFill             : true,
       //String - A legend template
@@ -48,11 +48,10 @@
 
 
 
-    var ip = 0;
-  @for ($i = 30; $i > 0; $i-- )
-    label_diario_atendimento_gringa.push(["{{today()->subDays($i)->format('d/m')}} " ])    
-    dados_diario_atendimento_gringa.push([ {{ Manzoli2122\Salao\Atendimento\Models\AtendimentoFuncionario::whereDate('created_at', [  today()->subDays($i)  ])->where('funcionario_id', 5)->sum('valor') }}   ])
-    ip = ip + 1;
+    @for ($i = 0 ; $i < $dia ; $i++ )
+    label_diario_atendimento_gringa.push(["{{$data->addDays($i)->format('d/m')}} " ])    
+    dados_diario_atendimento_gringa.push([ {{ Manzoli2122\Salao\Atendimento\Models\AtendimentoFuncionario::whereDate('created_at', $data->format('Y-m-d') )->where('funcionario_id', 5)->sum('valor') }}   ])
+    <?php $data->subDays($i); ?>
   @endfor
   
   var area_diario_atendimento_gringa = {    
@@ -62,7 +61,7 @@
         {
           label               : 'Electronics',
           fillColor           : 'rgba(210, 214, 222, 1)',
-          strokeColor         : 'rgba(210, 214, 222, 1)',
+          strokeColor         : 'rgba(100, 255, 110, 1)',
           pointColor          : 'rgba(210, 214, 222, 1)',
           pointStrokeColor    : '#c1c7d1',
           pointHighlightFill  : '#fff',

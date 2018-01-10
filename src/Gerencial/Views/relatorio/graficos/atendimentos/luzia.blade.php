@@ -27,7 +27,7 @@
       //Number - Radius of each point dot in pixels
       pointDotRadius          : 4,
       //Number - Pixel width of point dot stroke
-      pointDotStrokeWidth     : 1,
+      pointDotStrokeWidth     : 2,
       //Number - amount extra to add to the radius to cater for hit detection outside the drawn point
       pointHitDetectionRadius : 20,
       //Boolean - Whether to show a stroke for datasets
@@ -47,11 +47,11 @@
 
 
 
-    
-  @for ($i = 30; $i > 0; $i-- )
-    label_diario_atendimento_luzia.push(["{{today()->subDays($i)->format('d/m')}} " ])    
-    dados_diario_atendimento_luzia.push([ {{ Manzoli2122\Salao\Atendimento\Models\AtendimentoFuncionario::whereDate('created_at', [  today()->subDays($i)  ])->where('funcionario_id', 3)->sum('valor') }}   ])
-  @endfor
+    @for ($i = 0 ; $i < $dia ; $i++ )
+    label_diario_atendimento_luzia.push(["{{$data->addDays($i)->format('d/m')}} " ])    
+    dados_diario_atendimento_luzia.push([ {{ Manzoli2122\Salao\Atendimento\Models\AtendimentoFuncionario::whereDate('created_at', $data->format('Y-m-d') )->where('funcionario_id', 3)->sum('valor') }}   ])
+    <?php $data->subDays($i); ?>
+    @endfor
   
   var area_diario_atendimento_luzia = {    
      
@@ -60,7 +60,7 @@
         {
           label               : 'Electronics',
           fillColor           : 'rgba(210, 214, 222, 1)',
-          strokeColor         : 'rgba(210, 214, 222, 1)',
+          strokeColor         : 'rgba(100, 110, 255, 1)',
           pointColor          : 'rgba(210, 214, 222, 1)',
           pointStrokeColor    : '#c1c7d1',
           pointHighlightFill  : '#fff',
