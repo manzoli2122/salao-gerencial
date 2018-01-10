@@ -12,7 +12,7 @@ use Illuminate\Support\Facades\Route;
         Route::get('relatorio', 'GerencialController@index')->name('gerencial.relatorio.index');
         
         Route::post('relatorio/pagamentos', 'GerencialController@pagamentos')->name('relatorio-pagamentos-chart');
-
+        Route::post('relatorio/atendimentos', 'GerencialController@atendimentos')->name('relatorio-atendimentos-chart');
 
         Route::post('atendimentos/pesquisarPorData', 'AtendimentoController@pesquisarPorData')->name('gerencialAtendimentos.pesquisarPorData');
         
