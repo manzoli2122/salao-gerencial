@@ -38,5 +38,13 @@ use Illuminate\Support\Facades\Route;
 
 
 
+
+
+
+
+        Route::get('pagamentos', 'PagamentosController@index')->name('pagamentos.index');        
+        
+
+
     
     });

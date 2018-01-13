@@ -26,7 +26,7 @@ class AtendimentoController extends SoftDeleteController
     protected $view = "gerencial::atendimentos";
     protected $view_apagados = "gerencial::atendimentos.apagados";
     protected $route = "gerencialAtendimentos";
-    protected $log;
+    //protected $log;
 
     public function __construct(Pagamento $pagamento , Atendimento $atendimento  ,
                                 AtendimentoFuncionario $atendimentoFuncionario ,                                
