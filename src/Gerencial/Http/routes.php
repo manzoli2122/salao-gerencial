@@ -43,7 +43,8 @@ use Illuminate\Support\Facades\Route;
 
 
         Route::get('pagamentos', 'PagamentosController@index')->name('pagamentos.index');        
-        
+        Route::post('pagamentos/filtro', 'PagamentosController@filtrar')->name('pagamentos.filtrar');
+
 
 
     

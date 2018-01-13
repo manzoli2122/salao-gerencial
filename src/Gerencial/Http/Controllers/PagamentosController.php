@@ -14,7 +14,7 @@ use Manzoli2122\Salao\Cadastro\Http\Controllers\Padroes\Controller ;
 
 class PagamentosController extends Controller
 {
-    protected $pagamento;
+    protected $model;
 
     protected $route = "pagamentos";
 
@@ -23,7 +23,7 @@ class PagamentosController extends Controller
     public function __construct( Pagamento $pagamento  ){
         $this->middleware('auth');
 
-        $this->pagamento = $pagamento;
+        $this->model = $pagamento;
         
     }  
 
@@ -31,7 +31,27 @@ class PagamentosController extends Controller
       
     public function index()
     {
-        return view("{$this->view}.index");
+        $models = $this->model->get(); 
+        return view("{$this->view}.index" , compact('models'));
     }
+
+
+
+
+    public function filtrar(Request $request)
+    {       
+        $dataForm = $request->except('_token');
+        $formaPagamento = $dataForm['formaPagamento'];       
+        
+        $models = $this->model->whereDate('formaPagamento', $formaPagamento )->get();       
+        
+        //$data = Carbon::createFromFormat('Y-m-d', $dataString);
+              
+        return view("{$this->view}.index", compact('models'));
+    }
+
+
+
+
 
 }
