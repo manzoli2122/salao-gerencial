@@ -60,8 +60,8 @@ Index
                 <thead>
                     <tr>
 						
-						<th  >CLIENTE</th>
-						<th  style="max-width:120px">Data</th>
+						<th>CLIENTE</th>
+						<th style="max-width:120px">Data</th>
 						<th>Valor</th>		
 						
                         <th class="align-center" style="width:100px">Ações</th>
@@ -72,10 +72,11 @@ Index
 
                     @forelse($models as $model)
                         <tr>
-                            <td>{{$model->valor}}</td>
-                            <td></td>
+                            
+                            <td>{{$model->cliente->name }}</td>
 
-                            <td></td>
+                            <td>{{ $model->created_at->format('d/m/Y') }}</td>
+                            <td>{{$model->valor}}</td>
                             <td></td>
                             
                         </tr>
