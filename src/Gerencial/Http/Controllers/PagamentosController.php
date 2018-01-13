@@ -43,7 +43,7 @@ class PagamentosController extends Controller
         $dataForm = $request->except('_token');
         $formaPagamento = $dataForm['formaPagamento'];       
         
-        $models = $this->model->whereDate('formaPagamento', $formaPagamento )->get();       
+        $models = $this->model->where('formaPagamento', $formaPagamento )->get();       
         
         //$data = Carbon::createFromFormat('Y-m-d', $dataString);
               
