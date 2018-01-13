@@ -41,9 +41,13 @@ class PagamentosController extends Controller
     public function filtrar(Request $request)
     {       
         $dataForm = $request->except('_token');
-        $formaPagamento = $dataForm['formaPagamento'];       
-        
-        $models = $this->model->where('formaPagamento', $formaPagamento )->get();       
+        $formaPagamento = $dataForm['formaPagamento'];   
+
+        $operadora_confirm = $dataForm['operadora_confirm'];  
+
+
+        $models = $this->model->where('formaPagamento', $formaPagamento )
+                              ->where('operadora_confirm', $operadora_confirm )->get();       
         
         //$data = Carbon::createFromFormat('Y-m-d', $dataString);
               

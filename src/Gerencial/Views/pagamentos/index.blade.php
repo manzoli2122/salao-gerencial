@@ -21,7 +21,7 @@ Index
                 
 
                 <div class="form-group mx-sm-3 mb-2">                    
-                    <select class="form-control" name="formaPagamento" required onchange="myFunction(this.value)">
+                    <select class="form-control" name="formaPagamento" required >
                             <option value="">Selecione a forma de pagamento</option>                               
                             <option value="dinheiro"> Dinheiro  </option>
                             <option value="Pic Pay"> Pic Pay  </option>
@@ -33,10 +33,15 @@ Index
                     </select> 
                 </div>
 
-				<div class="form-group mx-sm-3 mb-2">
-					<label for="dia" class="sr-only">Dias</label>
-					<input name="dia" type="number" class="form-control" id="dia" placeholder="Dia" >
-				</div>
+                <div class="form-group mx-sm-3 mb-2">                    
+                        <select class="form-control" name="operadora_confirm" required>
+                                <option value="">Verificado a operadora? </option>                               
+                                <option value="1"> Sim  </option>
+                                <option value="0"> Não  </option>                                                           
+                        </select> 
+                </div>
+
+				
 				<div class="form-group mx-sm-3 mb-2">
 					<label for="data" class="sr-only">Data</label>
 					<input name="data" type="date" class="form-control" id="data" placeholder="Data" >
