@@ -54,11 +54,7 @@ Index
 
 
 
-			<a href="{{ route('pagamentos.index') }}">
-				<span class="sr-only">(current)</span>
-				<i class="glyphicon glyphicon-earphone fa-lg text-blue" aria-hidden="true"></i>
-				Pagamentos
-            </a>
+			
             
 
             <table class="table table-bordered table-striped table-hover" id="datatable">
