@@ -1,7 +1,7 @@
 @extends( Config::get('app.templateMaster' , 'templates.templateMaster') ) 
 
 @section( Config::get('app.templateMasterContentTitulo' , 'titulo-page') ) 
-Index 
+Pagamentos 
 @endsection @section( Config::get('app.templateMasterContent' , 'content') )
 
 <div class="col-xs-12">
@@ -15,9 +15,7 @@ Index
 
 			<form method="post" action="{{route('pagamentos.filtrar')}}" class="form-inline">
 				{{csrf_field()}}
-				<div class="form-group mx-sm-3 mb-2">
-					<label> Pagamentos </label>
-                </div>
+				
                 
 
                 <div class="form-group mx-sm-3 mb-2">                    
@@ -78,7 +76,7 @@ Index
 
                             <td>{{ $model->created_at->format('d/m/Y') }}</td>
                             <td>{{$model->valor}}</td>
-                            <td></td>
+                            <td> {{$model->getValor()}} </td>
                             
                         </tr>
                     @empty
