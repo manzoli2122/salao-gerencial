@@ -60,7 +60,8 @@ Pagamentos
                     <tr>
 						
 						<th>CLIENTE</th>
-						<th style="max-width:120px">Data</th>
+                        <th style="max-width:120px">Data</th>
+                        <th>Fprma de Pagamento</th>
 						<th>Valor</th>		
 						
                         <th class="align-center" style="width:100px">Ações</th>
@@ -75,8 +76,11 @@ Pagamentos
                             <td>{{$model->cliente->name }}</td>
 
                             <td>{{ $model->created_at->format('d/m/Y') }}</td>
-                            <td>{{$model->valor}}</td>
+                            <td> {{$model->formaPagamento}} </td>
                             <td> {{$model->getValor()}} </td>
+                           
+                            <td></td>
+                           
                             
                         </tr>
                     @empty
