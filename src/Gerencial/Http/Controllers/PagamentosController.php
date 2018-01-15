@@ -56,6 +56,28 @@ class PagamentosController extends Controller
 
 
 
+    public function confirmarOperadora($id)
+    {
+        try {            
+            $model = $this->model->find($id);
+            $model->operadora_confirm = true;
+            $model->update();                   
+            $msg = __('msg.sucesso_operadora_confirmada', ['1' => $this->name ]);
+            
+            //$msg2 =  "DELETEs - " . $this->name . ' apagado(a) com sucesso !! ' . $model . ' responsavel: ' . session('users') ;
+            //Log::write( $this->logCannel , $msg2  );            
+            
+        } 
+        catch(\Illuminate\Database\QueryException $e) 
+        {
+            $erro = true;
+            $msg = $e->errorInfo[1] == ErrosSQL::DELETE_OR_UPDATE_A_PARENT_ROW ? 
+                __('msg.erro_exclusao_fk', ['1' => $this->name , '2' => 'Model']):
+                __('msg.erro_bd');
+        }
+        return response()->json(['erro' => isset($erro), 'msg' => $msg], 200);
+
+    }
 
 
 }

@@ -61,7 +61,7 @@ Pagamentos
 						
 						<th>CLIENTE</th>
                         <th style="max-width:120px">Data</th>
-                        <th>Fprma de Pagamento</th>
+                        <th>Forma de Pagamento</th>
 						<th>Valor</th>		
 						
                         <th class="align-center" style="width:100px">Ações</th>
@@ -79,7 +79,13 @@ Pagamentos
                             <td> {{$model->formaPagamento}} </td>
                             <td> {{$model->getValor()}} </td>
                            
-                            <td></td>
+                            <td>
+
+                                <button type="button" class="btn btn-danger" id='btnExcluir' remover-apos-excluir>
+                                    <i class="fa fa-times"></i> Confimar repasse
+                                </button>
+
+                            </td>
                            
                             
                         </tr>
@@ -102,3 +108,59 @@ Pagamentos
 </div>
 
 @endsection
+
+
+
+@push(Config::get('app.templateMasterScript' , 'script') )
+	
+	<script>
+
+
+
+
+            window.ConfirmaOperadora = function(id, texto, url, funcSucesso = function() {}) {
+                alertConfimacao(texto, '',
+                    function() {
+                        alertProcessando();
+                        var token = document.head.querySelector('meta[name="csrf-token"]').content;
+            
+                        $.ajax({
+                            url: url + "/" + id,
+                            type: 'post',
+                            data: { _token: token },
+                            success: function(retorno) {
+                                alertProcessandoHide();
+                                if (retorno.erro) {
+                                    toastErro(retorno.msg);
+                                } else {
+                                    toastSucesso(retorno.msg);
+                                    funcSucesso();
+                                }
+                            },
+                            error: function(erro) {
+                                alertProcessandoHide();
+                                toastErro("Ocorreu um erro");
+                                console.log(erro);
+                            }
+                        });
+                    }
+                );
+            }
+
+
+
+
+
+
+        $(document).ready(function() {
+            $('#btnExcluir').click(function (){
+                excluirRecursoPeloId({{$model->id}}, "@lang('msg.conf_excluir_o', ['1' => 'tipo de seção'])", "{{route('pagamentos.confirmarOperadora')}}", 
+                    function(){
+                        $('[remover-apos-excluir]').remove();
+                        $('#divAlerta').slideDown();
+                    }
+                );
+            });
+        });
+	</script>
+@endpush
