@@ -41,14 +41,15 @@
 	<script>
 		$(document).ready(function() {
 			var dataTable = datatablePadrao('#datatable', {
-				order: [[ 2, "desc" ]],
+				order: [[ 0, "desc" ]],
 				ajax: { 
 					url:'{{ route('pagamentos.getDatatable') }}'
 				},
 				columns: [
 					{ data: 'id', name: 'id' },
-					{ data: 'formaPagamento', name: 'formaPagamento' },
 					{ data: 'created_at', name: 'created_at' },
+					{ data: 'formaPagamento', name: 'formaPagamento' },
+					
 					{ data: 'valor', name: 'valor' },
 				
 					{ data: 'action', name: 'action', orderable: false, searchable: false, class: 'align-center'}
