@@ -42,7 +42,12 @@ use Illuminate\Support\Facades\Route;
 
 
 
-        Route::get('pagamentos', 'PagamentosController@index')->name('pagamentos.index');        
+        Route::post('pagamentos/getDatatable', 'PagamentosController@getDatatable')->name('pagamentos.getDatatable');               
+        
+        Route::get('pagamentos', 'PagamentosController@index')->name('pagamentos.index');  
+        
+        
+
         Route::post('pagamentos/filtro', 'PagamentosController@filtrar')->name('pagamentos.filtrar');
         Route::post('pagamentos/confirma-operadora/{id}', 'PagamentosController@confirmarOperadora')->name('pagamentos.confirmarOperadora');
 
