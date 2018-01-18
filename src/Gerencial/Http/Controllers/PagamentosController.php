@@ -9,7 +9,8 @@ use Manzoli2122\Salao\Atendimento\Models\Pagamento;
 //use Manzoli2122\Salao\Atendimento\Models\ProdutosVendidos;
 //use Manzoli2122\Salao\Despesas\Models\Despesa;
 use Manzoli2122\Salao\Cadastro\Http\Controllers\Padroes\Controller ;
-
+use DataTables;
+use App\Constants\ErrosSQL;
 //use Carbon\Carbon;
 
 class PagamentosController extends Controller
