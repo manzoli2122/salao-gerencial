@@ -19,6 +19,8 @@ class PagamentosController extends Controller
 
     protected $route = "pagamentos";
 
+    protected $name = "Pagamento";
+
     protected $view = "gerencial::pagamentos";
 
     public function __construct( Pagamento $pagamento  ){
