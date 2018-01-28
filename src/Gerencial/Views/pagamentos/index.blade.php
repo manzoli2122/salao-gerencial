@@ -39,6 +39,38 @@
 	<script src="{{ mix('js/datatables-padrao.js') }}" type="text/javascript"></script>
 
 	<script>
+				
+		window.confirmarOperadoraPagamentoPeloId = function(id, texto, url, funcSucesso = function() {}) {
+			alertConfimacao(texto, '',
+				function() {
+					alertProcessando();
+					var token = document.head.querySelector('meta[name="csrf-token"]').content;
+
+					$.ajax({
+						url: url + "/" + id,
+						type: 'post',
+						data: {  _token: token },
+						success: function(retorno) {
+							alertProcessandoHide();
+							if (retorno.erro) {
+								toastErro(retorno.msg);
+							} else {
+								toastSucesso(retorno.msg);
+								funcSucesso();
+							}
+						},
+						error: function(erro) {
+							alertProcessandoHide();
+							toastErro("Ocorreu um erro");
+							console.log(erro);
+						}
+					});
+				}
+			);
+		}
+	</script>
+
+	<script>
 		$(document).ready(function() {
 			var dataTable = datatablePadrao('#datatable', {
 				order: [[ 0, "desc" ]],
@@ -57,8 +89,8 @@
 			});
 
 			dataTable.on('draw', function () {
-				$('[btn-excluir]').click(function (){
-					excluirRecursoPeloId($(this).data('id'), "@lang('msg.conf_excluir_o', ['1' => 'lAtendimentos'])", "{{ route('gerencialAtendimentos.apagados') }}", 
+				$('[btn-confirmar-operadora]').click(function (){
+					confirmarOperadoraPagamentoPeloId($(this).data('id'), "@lang('msg.conf_operadora_o', ['1' => 'Atendimentos'])", "{{ route('pagamentos.confirmarOperadora') }}", 
 						function(){
 							dataTable.row( $(this).parents('tr') ).remove().draw('page');
 						}

@@ -96,7 +96,7 @@ class PagamentosController extends Controller
         $models = $this->model->getDatatable();
         return Datatables::of($models)
             ->addColumn('action', function($linha) {
-                return '<button data-id="'. $linha->id . '" btn-excluir type="button" class="btn btn-danger btn-xs" title="Excluir"> <i class="fa fa-times"></i> </button> ' ;
+                return '<button data-id="'. $linha->id . '" btn-confirmar-operadora type="button" class="btn btn-danger btn-xs" title="Confirmar Operadora"> <i class="fa fa-times"></i> </button> ' ;
             })->make(true);
     }
 
