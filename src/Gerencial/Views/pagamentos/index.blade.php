@@ -19,7 +19,7 @@
                     <tr>
 						<th pesquisavel style="max-width:30px">ID</th>
 						
-                        <th pesquisavel style="max-width:120px">Data</th>
+                        <th style="max-width:120px">Data</th>
                         <th>Forma de Pagamento</th>
 						<th>Valor</th>		
 								
