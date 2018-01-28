@@ -47,7 +47,7 @@
 				},
 				columns: [
 					{ data: 'id', name: 'id' },
-					{ data: 'created_at', name: 'created_at' },
+					{ data: 'created_atd', name: 'created_atd' },
 					{ data: 'formaPagamento', name: 'formaPagamento' },
 					
 					{ data: 'valor', name: 'valor' },
