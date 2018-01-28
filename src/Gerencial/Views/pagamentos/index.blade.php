@@ -90,7 +90,7 @@
 
 			dataTable.on('draw', function () {
 				$('[btn-confirmar-operadora]').click(function (){
-					confirmarOperadoraPagamentoPeloId($(this).data('id'), "@lang('msg.conf_operadora_o', ['1' => 'Atendimentos'])", "{{ route('pagamentos.confirmarOperadora') }}", 
+					confirmarOperadoraPagamentoPeloId($(this).data('id'), "@lang('msg.conf_operadora_o', ['1' => 'Pagamento'])", "{{ route('pagamentos.confirmarOperadora') }}", 
 						function(){
 							dataTable.row( $(this).parents('tr') ).remove().draw('page');
 						}
