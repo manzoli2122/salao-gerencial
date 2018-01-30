@@ -19,16 +19,18 @@
 <div class="col-xs-12">
     <div class="box box-success">
 		<div class="box-header align-right">			
-				{!! Form::open(['route' => 'gerencialAtendimentos.pesquisarPorData' ]) !!}
+				<!-- Form::open(['route' => 'gerencialAtendimentos.pesquisarPorData' ]) 
 								<div class="input-group input-group-sm" style="width: 250px; margin-left:auto;">
-									{!! Form::date('key' , null , ['class' => 'form-control' , 'placeholder' => 'Pesquisar', 'required']) !!}
+									 Form::date('key' , null , ['class' => 'form-control' , 'placeholder' => 'Pesquisar', 'required']) 
 									<div class="input-group-btn">
 										<button style="margin-right:10px;" class="btn btn-outline-success my-2 my-sm-0 " type="submit" >
 											<i class="fa fa-search" aria-hidden="true"></i>
 										</button>	
 									</div>
 								</div>									
-							{!!  Form::close()  !!}		           
+							  Form::close()  -->
+							  
+							  
         	</div>
 			
         <div class="box-body">
