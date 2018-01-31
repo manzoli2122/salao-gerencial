@@ -37,7 +37,7 @@
 				},
 				columns: [
 					{ data: 'id', name: 'id' },
-					{ data: 'created_atd', name: 'created_atd' },
+					{ data: 'created_at', name: 'created_at' },
 					{ data: 'formaPagamento', name: 'formaPagamento' },					
 					{ data: 'valor', name: 'valor' },				
 					{ data: 'action', name: 'action', orderable: false, searchable: false, class: 'align-center'}
