@@ -15,8 +15,11 @@
                 pagamentos.bandeira,
                 operadoras.nome
                 
+                
   
   FROM pagamentos
+
+ 
   
   LEFT JOIN users 
   ON users.id = pagamentos.cliente_id 
@@ -25,5 +28,5 @@
   LEFT JOIN operadoras 
   ON operadoras.id = pagamentos.operadora_id 
 
-
+   WHERE pagamentos.deleted_at is NULL
   ;

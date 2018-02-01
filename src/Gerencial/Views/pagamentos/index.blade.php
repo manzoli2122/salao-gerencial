@@ -18,7 +18,8 @@
 						<th pesquisavel>Operadora</th>
 						<th pesquisavel>Bandeira</th>
 						<th pesquisavel>Cliente</th>
-						<th>Valor</th>														
+						<th>Valor</th>			
+						<th pesquisavel>V.P.O.</th>											
                         <th class="align-center" style="width:100px">Ações</th>
                     </tr>
                 </thead>
@@ -45,7 +46,8 @@
 					{ data: 'bandeira', name: 'bandeira' },
 					{ data: 'nome', name: 'nome' },		
 					{ data: 'cliente', name: 'cliente' },				
-					{ data: 'valor', name: 'valor' },								
+					{ data: 'valor', name: 'valor' },
+					{ data: 'operadora_confirm', name: 'operadora_confirm' },									
 					{ data: 'action', name: 'action', orderable: false, searchable: false, class: 'align-center'}
 				],
 			});
