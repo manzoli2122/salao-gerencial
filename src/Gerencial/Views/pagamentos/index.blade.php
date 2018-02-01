@@ -21,7 +21,7 @@
 						<th>Valor</th>			
 						<th pesquisavel>V.P.O.</th>											
 						<th class="align-center" style="width:100px">Operadora</th>
-						<th class="align-center" style="width:100px">Operadora</th>
+						
                     </tr>
                 </thead>
             </table>
@@ -50,7 +50,7 @@
 					{ data: 'valor', name: 'valor' },
 					{ data: 'operado', name: 'operado' },									
 					{ data: 'action', name: 'action', orderable: false, searchable: false, class: 'align-center'}
-					{ data: 'banco', name: 'banco', orderable: false, searchable: false, class: 'align-center'}
+					
 				],
 			});
 
