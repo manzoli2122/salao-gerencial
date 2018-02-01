@@ -50,6 +50,7 @@
 					{ data: 'valor', name: 'valor' },
 					{ data: 'operado', name: 'operado' },									
 					{ data: 'action', name: 'action', orderable: false, searchable: false, class: 'align-center'}
+					{ data: 'banco', name: 'banco', orderable: false, searchable: false, class: 'align-center'}
 				],
 			});
 
