@@ -4,7 +4,9 @@
   				users.name as cliente, 
  				
                 CONCAT( "R$", ROUND( pagamentos.valor, 2 ) ) as valor ,
-  				
+
+  				      IF(pagamentos.operadora_confirm = 0, 'não', 'sim') AS operado,
+
                 DATE_FORMAT( pagamentos.created_at, "%Y-%m-%d") as created_at, 
                 
   				      pagamentos.formaPagamento,

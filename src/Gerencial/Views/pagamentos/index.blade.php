@@ -47,7 +47,7 @@
 					{ data: 'nome', name: 'nome' },		
 					{ data: 'cliente', name: 'cliente' },				
 					{ data: 'valor', name: 'valor' },
-					{ data: 'operadora_confirm', name: 'operadora_confirm' },									
+					{ data: 'operado', name: 'operado' },									
 					{ data: 'action', name: 'action', orderable: false, searchable: false, class: 'align-center'}
 				],
 			});
