@@ -20,7 +20,8 @@
 						<th pesquisavel>Cliente</th>
 						<th>Valor</th>			
 						<th pesquisavel>V.P.O.</th>											
-                        <th class="align-center" style="width:100px">Ações</th>
+						<th class="align-center" style="width:100px">Operadora</th>
+						<th class="align-center" style="width:100px">Operadora</th>
                     </tr>
                 </thead>
             </table>

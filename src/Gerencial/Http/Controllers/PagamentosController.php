@@ -98,11 +98,20 @@ class PagamentosController extends Controller
         $models = $this->model->getDatatable();
         return Datatables::of($models)
             ->addColumn('action', function($linha) {
-                if(!$linha->operadora_confirm){
+                if(!$linha->operadora_confirm and (($linha->formaPagamento=='debito') or ($linha->formaPagamento =='credito' ) ) ){
                     return '<button data-id="'. $linha->id . '" btn-confirmar-operadora type="button" class="btn btn-danger btn-xs" title="Confirmar Operadora"> <i class="fa fa-arrow-up"></i> </button> ' ;
                 }
-                else
-                return '';
+                else{
+                     return '';
+                }
+            })
+            ->addColumn('banco', function($linha) {
+                if(!$linha->operadora_confirm and (($linha->formaPagamento=='debito') or ($linha->formaPagamento =='credito' ) ) ){
+                    return '<button data-id="'. $linha->id . '" btn-confirmar-operadora type="button" class="btn btn-danger btn-xs" title="Confirmar Operadora"> <i class="fa fa-arrow-up"></i> </button> ' ;
+                }
+                else{
+                     return '';
+                }
             })->make(true);
     }
 
