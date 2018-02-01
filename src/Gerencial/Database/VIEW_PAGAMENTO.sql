@@ -7,15 +7,23 @@
   				
                 DATE_FORMAT( pagamentos.created_at, "%Y-%m-%d") as created_at, 
                 
-  				pagamentos.formaPagamento,
+  				      pagamentos.formaPagamento,
 
                 pagamentos.operadora_confirm,
 
-                pagamentos.deleted_at
+                pagamentos.deleted_at,
+                pagamentos.bandeira,
+                operadoras.nome
+                
   
   FROM pagamentos
   
   LEFT JOIN users 
   ON users.id = pagamentos.cliente_id 
   
+
+  LEFT JOIN operadoras 
+  ON operadoras.id = pagamentos.operadora_id 
+
+
   ;

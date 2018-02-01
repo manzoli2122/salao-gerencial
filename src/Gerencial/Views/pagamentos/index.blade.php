@@ -15,6 +15,8 @@
 						<th pesquisavel style="max-width:30px">ID</th>						
                         <th pesquisavel style="max-width:120px">Data</th>
 						<th pesquisavel>Forma de Pagamento</th>
+						<th pesquisavel>Operadora</th>
+						<th pesquisavel>Bandeira</th>
 						<th pesquisavel>Cliente</th>
 						<th>Valor</th>														
                         <th class="align-center" style="width:100px">Ações</th>
@@ -39,9 +41,11 @@
 				columns: [
 					{ data: 'id', name: 'id' },
 					{ data: 'created_at', name: 'created_at' },
-					{ data: 'formaPagamento', name: 'formaPagamento' },	
+					{ data: 'formaPagamento', name: 'formaPagamento' },
+					{ data: 'bandeira', name: 'bandeira' },
+					{ data: 'nome', name: 'nome' },		
 					{ data: 'cliente', name: 'cliente' },				
-					{ data: 'valor', name: 'valor' },				
+					{ data: 'valor', name: 'valor' },								
 					{ data: 'action', name: 'action', orderable: false, searchable: false, class: 'align-center'}
 				],
 			});
