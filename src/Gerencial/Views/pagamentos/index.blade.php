@@ -19,7 +19,8 @@
 						<th pesquisavel>Bandeira</th>
 						<th pesquisavel>Cliente</th>
 						<th>Valor</th>			
-						<th pesquisavel>V.P.O.</th>											
+						<th pesquisavel>V.P.O.</th>	
+						<th pesquisavel>Na Conta</th>										
 						<th class="align-center" style="width:100px">Operadora</th>
 						
                     </tr>
@@ -48,7 +49,8 @@
 					{ data: 'nome', name: 'nome' },		
 					{ data: 'cliente', name: 'cliente' },				
 					{ data: 'valor', name: 'valor' },
-					{ data: 'operado', name: 'operado' },									
+					{ data: 'operado', name: 'operado' },	
+					{ data: 'na_conta', name: 'na_conta' },									
 					{ data: 'action', name: 'action', orderable: false, searchable: false, class: 'align-center'}
 					
 				],

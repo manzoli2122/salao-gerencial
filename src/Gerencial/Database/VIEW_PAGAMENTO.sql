@@ -7,6 +7,8 @@
 
   				      IF(pagamentos.operadora_confirm = 0, 'não', 'sim') AS operado,
 
+                IF(pagamentos.caiu_conta = 0, 'não', 'sim') AS na_conta,
+
                 DATE_FORMAT( pagamentos.created_at, "%Y-%m-%d") as created_at, 
                 
   				      pagamentos.formaPagamento,
@@ -15,7 +17,8 @@
 
                 pagamentos.deleted_at,
                 pagamentos.bandeira,
-                operadoras.nome
+                operadoras.nome,
+                pagamentos.caiu_conta
                 
                 
   
