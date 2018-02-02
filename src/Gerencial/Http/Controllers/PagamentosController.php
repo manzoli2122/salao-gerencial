@@ -102,7 +102,7 @@ class PagamentosController extends Controller
                     if(($linha->formaPagamento=='debito') or ($linha->formaPagamento =='credito' ))
                     return '<button data-id="'. $linha->id . '" btn-confirmar-operadora type="button" class="btn btn-danger btn-xs" title="Confirmar Operadora"> OPERADORA <i class="fa fa-arrow-up"></i> </button> ' ;
                 }
-                else if( !$linha->caiu_conta ){
+                else if( !$linha->na_conta ){
                     return '<button data-id="'. $linha->id . '" btn-confirmar-operadora type="button" class="btn btn-warning btn-xs" title="Confirmar Operadora">BANCO <i class="fa fa-arrow-up"></i> </button> ';
                 }
                 else{
