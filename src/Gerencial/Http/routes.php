@@ -50,9 +50,10 @@ use Illuminate\Support\Facades\Route;
 
         Route::post('pagamentos/filtro', 'PagamentosController@filtrar')->name('pagamentos.filtrar');
         Route::post('pagamentos/confirma-operadora/{id}', 'PagamentosController@confirmarOperadora')->name('pagamentos.confirmarOperadora.id');
-
         Route::post('pagamentos/confirma-operadora', 'PagamentosController@confirmarOperadora')->name('pagamentos.confirmarOperadora');
 
+        Route::post('pagamentos/confirma-banco/{id}', 'PagamentosController@confirmarBanco')->name('pagamentos.confirmarBanco.id');
+        Route::post('pagamentos/confirma-banco', 'PagamentosController@confirmarBanco')->name('pagamentos.confirmarBanco');
 
     
     });

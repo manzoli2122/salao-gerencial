@@ -65,6 +65,16 @@
 					);
 				});
 			});
+
+			dataTable.on('draw', function () {
+				$('[btn-confirmar-banco]').click(function (){
+					confirmarOperadoraPagamentoPeloId($(this).data('id'), "@lang('msg.conf_banco_o', ['1' => 'Pagamento'])", "{{ route('pagamentos.confirmarBanco') }}", 
+						function(){
+							dataTable.row( $(this).parents('tr') ).remove().draw('page');
+						}
+					);
+				});
+			});
 		});
 	</script>
 @endpush							
