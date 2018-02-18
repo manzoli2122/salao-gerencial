@@ -31,8 +31,8 @@
 						<th pesquisavel>Bandeira</th>
 						<th pesquisavel>Cliente</th>
 						<th>Valor</th>			
-						<th pesquisavel>V.P.O.</th>	
-						<th pesquisavel>Na Conta</th>										
+						<th pesquisavel style="max-width:30px">V.P.O.</th>	
+						<th pesquisavel style="max-width:40px">Na Conta</th>										
 						<th class="align-center" style="width:100px">Ação</th>
 						
                     </tr>
