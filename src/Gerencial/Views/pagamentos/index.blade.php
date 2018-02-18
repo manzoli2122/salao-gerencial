@@ -26,7 +26,7 @@
                     <tr>
 						<th pesquisavel style="max-width:20px">ID</th>						
                         <th pesquisavel style="max-width:50px">Data</th>
-						<th pesquisavel>Forma Pag.</th>
+						<th pesquisavel style="max-width:60px">Forma Pag.</th>
 						<th pesquisavel>Operadora</th>
 						<th pesquisavel>Bandeira</th>
 						<th pesquisavel>Cliente</th>
