@@ -4,17 +4,29 @@
 	Listagem dos Pagamentos
 @endsection
 
+@push( Config::get('app.templateMasterCss' , 'css')  )			
+	<style type="text/css">
+		.btn-group-sm>.btn, .btn-sm {
+			padding: 1px 10px;
+			font-size: 15px;		
+		} 
+		.table>tbody>tr>td, .table>tbody>tr>th, .table>tfoot>tr>td, .table>tfoot>tr>th, .table>thead>tr>td, .table>thead>tr>th {
+			padding: 5.5px;
+		}
+	</style>
+@endpush
+
 @section( Config::get('app.templateMasterContent' , 'content')  )
 
 <div class="col-xs-12">
     <div class="box box-success">
-        <div class="box-body">
+        <div class="box-body" style="padding-top: 5px; padding-bottom: 3px;">
             <table class="table table-bordered table-striped table-hover" id="datatable">
                 <thead>
                     <tr>
-						<th pesquisavel style="max-width:30px">ID</th>						
-                        <th pesquisavel style="max-width:120px">Data</th>
-						<th pesquisavel>Forma de Pagamento</th>
+						<th pesquisavel style="max-width:20px">ID</th>						
+                        <th pesquisavel style="max-width:50px">Data</th>
+						<th pesquisavel>Forma Pag.</th>
 						<th pesquisavel>Operadora</th>
 						<th pesquisavel>Bandeira</th>
 						<th pesquisavel>Cliente</th>
@@ -49,8 +61,8 @@
 					{ data: 'nome', name: 'nome' },		
 					{ data: 'cliente', name: 'cliente' },				
 					{ data: 'valor', name: 'valor' },
-					{ data: 'operado', name: 'operado' },	
-					{ data: 'na_conta', name: 'na_conta' },									
+					{ data: 'operado', name: 'operado' , orderable: false },	
+					{ data: 'na_conta', name: 'na_conta' , orderable: false },									
 					{ data: 'action', name: 'action', orderable: false, searchable: false, class: 'align-center'}
 					
 				],
