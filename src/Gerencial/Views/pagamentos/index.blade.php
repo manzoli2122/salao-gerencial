@@ -56,11 +56,11 @@
 				columns: [
 					{ data: 'id', name: 'id' },
 					{ data: 'created_at', name: 'created_at' },
-					{ data: 'formaPagamento', name: 'formaPagamento' },
-					{ data: 'bandeira', name: 'bandeira' },
-					{ data: 'nome', name: 'nome' },		
-					{ data: 'cliente', name: 'cliente' },				
-					{ data: 'valor', name: 'valor' },
+					{ data: 'formaPagamento', name: 'formaPagamento' , orderable: false},
+					{ data: 'bandeira', name: 'bandeira' , orderable: false},
+					{ data: 'nome', name: 'nome' , orderable: false},		
+					{ data: 'cliente', name: 'cliente' , orderable: false},				
+					{ data: 'valor', name: 'valor' , orderable: false},
 					{ data: 'operado', name: 'operado' , orderable: false },	
 					{ data: 'na_conta', name: 'na_conta' , orderable: false },									
 					{ data: 'action', name: 'action', orderable: false, searchable: false, class: 'align-center'}
