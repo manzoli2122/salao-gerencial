@@ -4,35 +4,37 @@
 	Listagem dos Atendimentos
 @endsection
 
-
-
 @section( Config::get('app.templateMasterMenuLateral' , 'menuLateral')  )				
 	@permissao('gerencialAtendimentos-apagados')
 		<li><a href="{{  route('gerencialAtendimentos.apagados')}}"><i class="fa fa-circle-o text-red"></i> <span>Atendimentos Apagados</span></a></li>
 	@endpermissao
 @endsection
 
-
-		
+@push( Config::get('app.templateMasterCss' , 'css')  )			
+	<style type="text/css">
+		.btn-group-sm>.btn, .btn-sm {
+			padding: 1px 10px;
+			font-size: 15px;		
+		} 
+		.table>tbody>tr>td, .table>tbody>tr>th, .table>tfoot>tr>td, .table>tfoot>tr>th, .table>thead>tr>td, .table>thead>tr>th {
+			padding: 5.5px;
+		}
+	</style>
+@endpush	
 
 @section( Config::get('app.templateMasterContent' , 'content')  )
 
 <div class="col-xs-12">
     <div class="box box-success">
-
-			
-		
-		
-        <div class="box-body">
+        <div class="box-body" style="padding-top: 5px; padding-bottom: 3px;">
             <table class="table table-bordered table-striped table-hover" id="datatable">
                 <thead>
                     <tr>
-						<th pesquisavel style="max-width:30px">ID</th>
+						<th pesquisavel style="max-width:20px">ID</th>
 						<th pesquisavel >CLIENTE</th>
 						<th pesquisavel style="max-width:120px">Data</th>
 						<th>Valor</th>		
-						
-                        <th class="align-center" style="width:100px">Ações</th>
+                        <th class="align-center" style="width:120px">Ações</th>
                     </tr>
                 </thead>
             </table>
